@@ -1,0 +1,130 @@
+<script>
+//중복 선언 가능.
+var num = 100;
+
+var num = 200;
+
+console.log(num);
+
+/*                                      */
+
+//변수가 선언 되지 않았을 때 test는 실행되지 않음.
+
+console.log(kms);
+console.log("test");
+
+/*                                      */
+
+//하지만 var로 선언한 변수는 끌어올려진다.
+
+var kms = 100;
+
+console.log(kms);
+
+/*                                      */
+
+//초기화와 선언을 따로해도 끌어 올려진다.
+
+var test;
+
+console.log(test);
+
+test = 400;
+
+console.log(test);
+
+/*                                      */
+
+//for문에서도 가능하다.
+
+console.log(i);
+//-> 단독으로 쓰일시 에러
+
+for(var i = 0; i<3; i++){
+    console.log("for문 i = "+ i);
+}
+
+/*                                      */
+
+var forhosting;
+
+console.log(forhosting);
+
+for( forhosting = 0 ; forhosting < 3 ; forhosting++){
+    console.log("forhosting : " + forhosting);
+}
+
+/*                                      */
+
+//if문에도 가능하다.
+
+var ifhosting = 10;
+
+console.log(ifhosting);
+
+if(ifhosting !== 10){
+    var ifhosting = 20;
+
+    console.log("ifhosting !== 10");
+}else{
+    console.log("ifhosting === 10");
+}
+
+console.log("ifhosting = " + ifhosting);
+
+/*                                      */
+
+//동일한 코드
+
+var ifhosting2 ;
+
+ifhosting2 = 10;
+
+console.log(ifhosting2);
+
+if(ifhosting2 !== 10){
+    //변수 선언문은 끌어 올려지고 초기화문만 남음
+    ifhosting2 = 20;
+
+    console.log("ifhosting2 !== 10");
+}else{
+    console.log("ifhosting2 === 10");
+}
+
+console.log("ifhosting2 =" + ifhosting2 );
+
+/*                                      */
+
+console.log(ifhosting3)
+
+if(ifhosting3 !== 10){
+    var ifhosting3 = 20;
+
+    console.log("ifhosting3 !== 10");
+}else{
+    console.log("ifhosting3 === 10");
+}
+
+console.log("ifhosting3 = " + ifhosting3);
+//> 20 즉, if문안에 변수를 초기화해도 사용이 가능하다는 것.
+
+/*                                      */
+
+var ifhosting4;
+
+console.log(ifhosting4);
+
+if(ifhosting4 !== 10){
+    ifhosting4 = 20;
+
+    console.log("ifhosting4 !== 10");
+}else{
+    console.log("ifhosting4 === 10");
+}
+
+console.log("ifhosting4 = " + ifhosting4);
+//마찬가지로 가능하다.
+
+
+
+</script>
