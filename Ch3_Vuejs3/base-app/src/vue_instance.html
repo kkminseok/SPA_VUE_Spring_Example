@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Vue Sample</title>
+        <!-- Vue js install-->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+        <body>
+            <div id="app">
+                {{message}}
+            </div>
+
+            <script>
+                console.assert(typeof Vue !== 'undefined');
+
+                new Vue({
+                    el: '#app',
+                    data:{
+                        message : 'Hello world vue',
+                    }
+                })
+            </script>
+        </body>
+    </head>
+</html>
