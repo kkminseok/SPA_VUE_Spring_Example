@@ -1,0 +1,40 @@
+<script>
+//선언과 동시에 초기화
+let num = 100;
+
+console.log(num);
+
+//선언 후 초기화
+let num2;
+
+num2 = 200;
+
+console.log(num2);
+
+//중복 선언 불가능.
+
+//호이스팅이 발생하지 않음.
+
+//console.log(num3);
+
+let num3 = 300;
+
+//for문에서도 호이스팅이 발생하지 않음.
+
+// for문 외부에서 사용 불가능, 호이스팅이 발생하지 않는다. 블록 외부에서 사용 불가능.
+
+console.log(i);
+
+for(let i = 0; i<3; i++){
+    let num4 = 20;
+    console.log("test i + num = " + i + num);
+}
+
+console.log(i);
+console.log(num4);
+
+
+
+
+
+</script>
