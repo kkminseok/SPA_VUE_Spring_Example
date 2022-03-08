@@ -132,9 +132,15 @@
 ## Ch3_9 Vue Computed 속성
 
 - computed에 대한 설명
-  - computed에 의해 한 번 계산된 값은 캐시기능을 지원하여 값이 변하지 않으면 캐시된 값을 사용하기에 렌더링 속도 향상에 기여함.
+  - computed에 의해 한 번 계산된 값은 캐시기능을 지원하여 값이 변하지 않으면 캐시된 값을 사용하기에 렌더링 속도 향상에 기여함. 인터넷이 연결되지 않아도 자동으로 감지하여 계산한다는게 신기
   - 컴포지션 방식, Option API 방식
   - reduce()가 나온다. 콜백함수로 
     > <https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce>에 자세히 나옴.
-  - 
+
+## Ch3_10 Vue Methods 속성
+
+- methods에 대한 설명
+  - 컴포지션 방식, Option API방식.
+
+
 
