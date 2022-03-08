@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>3_11 vue watch sample</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    </head>
+    
+    <body>
+        <div id = "app">
+            mainboarPrice : <input type="text" v-on:input="price = $event.target.value" v-bind:value="price">
+        </div>
+    </body>
+</html>
+
+<script>
+new Vue({
+    el: '#app',
+    data : {
+        price : 125394,
+    },
+    watch:{
+        price : function(next,prev){
+            console.log("prev value : ",prev)
+            console.log("after value : ",next);
+        }
+    }
+})
+
+</script>
