@@ -92,3 +92,49 @@
     })
     vm.$mount('#app')
     ```
+
+## Ch3_5 Vue 인스턴스 옵션
+
+- vue 구성방식에는 컴포지션 api(setup 함수를 이용한) 방식과 optionAPI방식이 있음.
+- option API
+    - template : 화면 요소를 정의하는 속성
+    - data : 인스턴스의 상태/데이터
+    - el : Vue인스턴스가 마운트되는 화면 요소
+    - filters : 데이터를 형식화하는 함수 정의
+    - methods : 이벤트 발생시 처리하는 함수 정의
+    - computed : 데이터로부터 계산되어지는 값.
+    - created : 뷰 인스턴스가 생성되자마자 실행할 로직을 정의할 수 있는 라이프 사이클 속성
+  
+## Ch3_6 Vue Life Cycle
+
+- 컴포지션 api, option api 방식에 따라 확인법이 다름.
+    - beforeCreated : 인스턴스가 생성되고 초기화 전 단계(data, methods 접근 불가)
+    - created : data, methods 접근 가능.
+    - beforedMount : el 속성에 지정한 화면 요소에 출력하기 위한 전 단계
+    - mounted : el 속성에 지정한 화면 요소가 출력되는 단계
+    - beforeupdated : 관찰하고 있는 데이터가 변경되면 가상 DOM으로 화면을 다시 그리기 전 단계
+    - updated : 그린 단계
+    - beforeDestory : 인스턴스 데이터를 삭제하기 좋은 단계 
+    - destoryed : 뷰 인스턴스에 정의한 모든 속성과 하위 선언된 인스턴스 모두 삭제
+
+## Ch3_7 Vue Data
+
+- Data 속성에 대한 이야기.
+  - 컴포지션 방식으로 data선언 방식 => 나는 익숙해져서 그런지 불편
+  - Option API방식으로 data선언 => 내가 알고 있는 것.
+
+## Ch3_8 Vue Template
+
+- v-bind, v-for에 대한 간단한 실습.
+  - 컴포지션 방식, Option API를 사용하여 실습.
+  - v-bind는 아이디, 클래스, 스타일 등의 HTML 속성 값에 뷰 데이터를 연결할 때 사용. 형식은 v-bind 속성을 지정할 HTML 속성 앞에 접두사로 v-bind:를 붙여준다.
+
+## Ch3_9 Vue Computed 속성
+
+- computed에 대한 설명
+  - computed에 의해 한 번 계산된 값은 캐시기능을 지원하여 값이 변하지 않으면 캐시된 값을 사용하기에 렌더링 속도 향상에 기여함.
+  - 컴포지션 방식, Option API 방식
+  - reduce()가 나온다. 콜백함수로 
+    > <https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce>에 자세히 나옴.
+  - 
+

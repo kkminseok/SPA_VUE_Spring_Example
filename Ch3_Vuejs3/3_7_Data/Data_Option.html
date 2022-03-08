@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title> Vue Sample</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    </head>
+
+    <body>
+        <div id = 'app'>
+            {{dataitems}}
+        </div>
+
+        <script>
+            var items = [
+                {name : 'CPU',price: 36000, qu : 1},
+                {name : 'mainboard', price : 80000, qu:1},
+                {name : 'memory', price : 160000, qu:1 }
+            ]
+
+            new  Vue({
+                el : '#app',
+                data : {
+                    dataitems : items
+                }
+            })
+        </script>
+    </body>
+</html>

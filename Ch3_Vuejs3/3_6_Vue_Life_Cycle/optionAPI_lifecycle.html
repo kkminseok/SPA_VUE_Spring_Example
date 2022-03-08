@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>kms Vue Sample</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id = "app">
+            {{message}}
+        </div>
+        <script>
+            new Vue({
+                el : '#app',
+                data :{
+                    message : 'kms Option API LifeCycle'
+                },
+                beforeCreate() {
+                    console.log("beforeCreate");
+                },
+                created(){
+                    console.log("creadte");
+                },
+                beforeMount() {
+                    console.log("before Mount")
+                },
+                mounted(){
+                    console.log("mount");
+                },
+                beforeUpdate() {
+                    console.log("before Update")
+                },
+                updated() {
+                    console.log("updated")
+                },
+                beforeDestroy() {
+                    console.log("before destory")
+                },
+                destroyed() {
+                    console.log("destoryed");
+                },
+
+            })
+        </script>
+    </body>
+</html>
