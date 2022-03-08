@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <title>Vue sample</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <form>
+                <table>
+                    <tr>
+                        <td>user id </td>
+                        <td>{{userId}}</td>
+                    </tr>
+                    <tr>
+                        <td>password</td>
+                        <td><input type="password" v-bind:value="userPw"/></td>
+                    </tr>
+                    <tr>
+                        <td>introduce</td>
+                        <td><textarea row="5" v-bind:value="introduction"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>developer ?</td>
+                        <td>
+                            <span v-if="developer">developer</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>foreigner ? </td>
+                        <td>
+                            <span v-show="foreigner === 'yes'"> foreigner</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>gender</td>
+                        <td>
+                            <span v-if="gender==='male'">Male</span>
+                            <span v-else>Female</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>area</td>
+                        <td>
+                            <select v-bind:value="nationality">
+                                <option disabled value="">Please select one</option>
+                                <option value="01">Korea</option>
+                                <option value="02">Germany</option>
+                                <option value="03">Australia</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>area</td>
+                        <td>
+                            <span v-if="nationality === '01'">Korea</span>
+                            <span v-else-if="nationality === '02'">Germany</span>
+                            <span v-else-if="nationality === '03'">Australia</span>
+                            <span v-else>None</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>area</td>
+                        <td>
+                            {{getNationality}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>have car</td>
+                        <td>
+                            <select v-model="carList" multiple>
+                                <option>Volvo</option>
+                                <option>Saab</option>
+                                <option>Opel</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            userId:"KMS",
+            userPw: "12345",
+            introduction: "vue test",
+            developer: false,
+            foreigner: "no",
+            hobbyList: ["Sports","Music","Movie"],
+            gender: "male",
+            nationality: "01",
+            carList: ["Volvo","Saab"],
+        },
+        computed:{
+            getNationality: function(){
+                if(this.nationality ==="01"){
+                    return "Korea";
+                }else if(this.nationality ==="02"){
+                    return "Germany";
+                }else if(this.nationality === "03"){
+                    return "Australia";
+                }else{
+                    return "None";
+                }
+            }
+        }
+    })
+</script>
