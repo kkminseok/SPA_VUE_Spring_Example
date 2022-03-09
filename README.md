@@ -170,3 +170,35 @@
 - 폼 바인딩에 대한 설명
   - 크게 텍스트 바인딩, 체크박스 바인딩, 셀렉트 박스 바인딩, 라디오 버튼 바인딩, 등이 있다.
 
+## Ch3_15 Vue Components
+
+- 컴포넌트에 대한 설명
+  - 케밥 케이스(ex: board-register-form), 파스칼 케이스(BoardRegisterForm)가 있는데, 케밥 케이스로 명명된 컴포넌트는 HTML에서 그대로 사용.
+  ```js
+  <board-register-form @submit="onSubmit">
+  ```
+
+  파스칼 케이스 경우 위처럼 사용 가능하고, 다음과 같이도 사용 가능
+  ```js
+  <BoardRegisterForm @submit="onSubmit">
+  ```
+
+- 싱글 파일 컴포넌트(SFC)
+  - 하나의 파일로 Vue의 컴포넌트를 나타내는 방식으로 정의
+
+- Vue.js 3 이전 방식
+  - 전역 컴포넌트 등록 방식
+    ```js
+    Vue.component('컴포넌트 이름',{
+      //컴포넌트 내용
+    })
+    ```
+  - 지역 컴포넌트 등록 방식
+    ```js
+    new Vue({
+      components:{
+        '컴포넌트 이름' : 컴포넌트 내용
+      }
+    })
+    ```
+지역과 전역은 복습을 할 필요가 있음. 

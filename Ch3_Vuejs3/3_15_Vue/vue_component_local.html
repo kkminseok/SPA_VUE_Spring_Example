@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Vue Sample</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    </head>
+    
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="item in items" v-bind:key=item.name>
+                    {{item.name}}의 가격 : <input type="text" v-on:input="item.price = $event.target.value" v-bind:value="item.price">
+                </li>
+            </ul>
+            <hr>
+            <item-list v-bind:items="items"></item-list>
+        </div>
+        <div id="app2">
+            <ul>
+                <li v-for="item in items" v-bind:key=item.name>
+                    {{item.name}}의 가격 : <input type="text" v-on:input="item.price = $event.target.value" v-bind:value="item.price">
+                </li>
+            </ul>
+            <hr>
+            <item-list v-bind:items="items"></item-list>
+        </div>
+    </body>
+</html>
+
+<script>
+
+    var ItemList={
+        props: ['items'],
+        template:
+        `
+        <div>
+            <ul>
+                <li v-for="item in items" v-bind:key="item.name">
+                    {{item.name}} : {{item.price}} * {{item.qu}} = {{item.price * item.qu}} 원
+                </li>
+            </ul>
+            <p>total : {{totalPrice}}</p>
+        </div>
+        `,
+        computed:{
+            totalPrice: function(){
+                return this.items.reduce(function(sum,item){
+                    return sum + (item.price * item.qu)
+                },0)
+            }
+        }
+    }
+
+    var items = [
+        {name: 'cpu', price: 137432, qu:2},
+        {name: 'mainboard', price: 12732, qu:1},
+        {name: 'memory', price:123498, qu:3},
+    ]
+
+    new Vue({
+        el: '#app',
+        data:{
+            items: items
+        },
+        components:{
+            'item-list': ItemList
+        }
+    })
+
+    new Vue({
+        el: '#app2',
+        data:{
+            items:items
+        }
+    })
+</script>
