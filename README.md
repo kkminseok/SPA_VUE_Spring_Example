@@ -202,3 +202,14 @@
     })
     ```
 지역과 전역은 복습을 할 필요가 있음. 
+
+## Ch3_16 props
+
+- props에 대한 설명.
+  - 상위-> 하위 컴포넌트 v-bind로 매핑, 하위에서는 props으로 받을 데이터를 선언해놔야함.
+
+## Ch3_17 Vue Provide/inject + readonly
+
+- Provide, inject에 대한 설명
+  - 공유 데이터를 선언(Provide) 하위 컴포넌트는 Inject을 통하여 받아올 수 있음.
+  - readonly속성을 넣으면 inject한 컴포넌트는 해당 데이터 수정이 불가.
