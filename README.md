@@ -213,3 +213,12 @@
 - Provide, inject에 대한 설명
   - 공유 데이터를 선언(Provide) 하위 컴포넌트는 Inject을 통하여 받아올 수 있음.
   - readonly속성을 넣으면 inject한 컴포넌트는 해당 데이터 수정이 불가.
+  
+## Ch3_18 Vue event 전달
+
+- 하위컴포넌트에서 상위 컴포넌트로 이벤트 전달할 때 emit을 사용. 컴포지션 방식에서는 추가로 context를 사용.
+
+## Ch3_19 Vue ref, reactive
+
+- ref,reactive라는 반응형 변수 선언 방법
+

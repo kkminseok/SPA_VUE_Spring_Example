@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Vue Sample</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="(item,index) in items" v-bind:key="item.name">
+                    <item-input v-bind:item-name="item.name"
+                    v-bind:item-price="item.price"
+                    v-bind:item-index="index"
+                    v-on:change-price="onChangePrice"></item-input>
+                </li>
+            </ul>
+            <hr>
+            <item-list v-bind:items="items"></item-list>
+        </div>
+    </body>
+</html>
+
+<script>
+
+    var ItemInput = {
+        props: ['itemName', 'itemPrice', 'itemIndex'],
+        template: '<div>{{ itemName }}의 가격: <input type="text" v-on:input="changePrice" v-bind:value="itemPrice"></div>',
+        methods: {
+          changePrice(event) {
+            const newPrice = event.target.value
+            console.log('newPrice:', newPrice)
+            this.$emit('change-price', newPrice, this.itemIndex)
+          }
+        }
+      };
+
+    var ItemList = {
+        props: ['items'],
+        template: 
+          ` <div>
+              <ul>
+                <li v-for="item in items" v-bind:key="item.name">
+                  {{ item.name }}: {{ item.price }} x {{ item.quantity }} = {{ item.price * item.quantity }} 원
+                </li>
+              </ul>
+              <p>합계: {{ totalPrice }} 원</p>
+            </div>
+          `,
+        computed: {
+          totalPrice () {
+            return this.items.reduce(function (sum, item) {
+              return sum + (item.price * item.quantity)
+            }, 0)
+          }
+        }
+      };
+
+    var items = [
+        {
+          name: 'CPU', price: 462984, quantity: 1
+        }, {
+          name: '메인보드', price: 112053, quantity: 1
+        }, {
+          name: '메모리', price: 79608, quantity: 2
+        }
+      ];
+
+    new Vue({
+        el: '#app',
+        data:{
+            items,items
+        },
+        components:{
+            'item-list':ItemList,
+            'item-input':ItemInput
+        },
+        methods:{
+            onChangePrice(newPrice,index){
+                console.log('onChangePrice newPrice',newPrice)
+                console.log('onChangePrice index',index)
+
+                this.items[index].price = newPrice
+            }
+        }
+    })
+</script>
