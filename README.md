@@ -156,7 +156,7 @@
   - v-show : v-if와 다르게 돔에서 제거하지 않고 display:none처리해서 안 보여줌.
   - v-bind : HTML 태그의 기본 속성과 뷰 데이터 속성을 연결
   - v-on : 화면 요소의 이벤트를 감지하여 처리
-  - v-model : 폼에 입력한 값을 뷰 인스턴스의 데이터와 즉시 동기화함. <input>, <select>, <textarea> 태그에만 사용가능
+  - v-model : 폼에 입력한 값을 뷰 인스턴스의 데이터와 즉시 동기화함. '<input>', '<select>', <textarea> 태그에만 사용가능
 
 ## Ch3_13 Vue Event
 
