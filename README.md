@@ -222,3 +222,10 @@
 
 - ref,reactive라는 반응형 변수 선언 방법
 
+---
+
+## Ch4 TodoAPP
+
+- vuex사용, Ch3에서 배웠던 내용 학습.
+  - dispatch(), actions으로 연결. actions내에서는 mutations을 호출,커밋
+
