@@ -228,4 +228,8 @@
 
 - vuex사용, Ch3에서 배웠던 내용 학습.
   - dispatch(), actions으로 연결. actions내에서는 mutations을 호출,커밋
+- 끝 
+  - 딱히 뭘 배웠는지 모르겠네. 책 괜히 샀나.
+  - 일단 읽자.
 
+## Ch5 CRUD board APP

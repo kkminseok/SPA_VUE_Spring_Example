@@ -20,6 +20,7 @@ export default{
         ItemInput,
     },
     setup(){
+        //공유 데이터 접근
         const items= inject('items')
 
         return{
