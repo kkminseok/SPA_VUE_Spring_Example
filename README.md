@@ -237,4 +237,11 @@
 - routes 사용, axios사용
 - CRUD 개념잡기 좋았지만, 아쉬운건 RESTAPI서버를 직접 구축하지는 않음.
 - 저자사이트에서 java API서버를 jar파일로 제공.
-- 
+
+
+## Ch6 File upload Board Application
+
+- 파일 업로드 하는 방법을 배움
+
+## Ch7 Image Market Application
+
