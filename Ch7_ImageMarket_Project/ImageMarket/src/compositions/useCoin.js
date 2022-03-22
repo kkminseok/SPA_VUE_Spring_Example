@@ -4,12 +4,18 @@ import client from '/@modules/client.js'
 export const useCoin = () => {
     const state = reactive({
         chargeCoins: [],
+        payCoins: [],
     })
 
     const chargeCoins = computed(() => state.chargeCoins)
+    const payCoins = computed(() => state.payCoins)
 
     const FETCH_CHARGECOIN_LIST = (chargeCoins) => {
         state.chargeCoins = chargeCoins
+    }
+
+    const FETCH_PAYCOIN_LIST = (payload) => {
+        state.payCoins = payCoins
     }
 
     const fetchChargeCoinList = () => {
@@ -19,8 +25,19 @@ export const useCoin = () => {
             })
     }
 
+    const fetchPayCoinList = () => {
+        return client.get('/coins/pay')
+            .then(res => {
+                FETCH_PAYCOIN_LIST(res.data)
+            })
+    }
+
+    
+
     return {
         chargeCoins,
         fetchChargeCoinList,
+        payCoins,
+        fetchPayCoinList,
     }
 }

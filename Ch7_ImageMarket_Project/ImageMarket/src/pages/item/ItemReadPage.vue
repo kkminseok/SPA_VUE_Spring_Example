@@ -5,6 +5,7 @@
             <p v-else>loading...</p>
             <router-link v-if="isAdmin" :to="{ name: 'ItemModifyPage', params: {itemId} }">Edit</router-link> 
             <button v-if="isAdmin" @click="deletePost">Delete</button>
+            <button v-if="isMember" @click="buyItem">Buy</button>
             <router-link :to="{ name: 'ItemListPage'}">List</router-link>
     </div>
 </template>
@@ -55,11 +56,31 @@ export default {
                     }
                 })
         }
+
+        const buyItem = () => {
+            const { itemId } = item.value
+            client.get(`/items/buy/${itemId}`)
+                .then(res => {
+                    alert(res.data)
+                })
+                .catch(err => {
+                    if(err.response.status === 401){
+                        alert('Login plz')
+                        router.push({name: 'Signin'})
+                    }else if(err.response.status === 403){
+                        alert('Plz access allow')
+                        router.back()
+                    }else {
+                        alert(err.response.data.message)
+                    }
+                })
+        }
         return {
             isAdmin,
             isMember,
             item,
             deletePost,
+            buyItem,
         }
     }
 }

@@ -7,6 +7,8 @@ import { BoardRouters } from '/@router/board.js'
 import { NoticeRouters } from "/@router/notice.js";
 import { ItemRouters } from "/@router/item";
 import { CoinRouters } from "/@router/coin";
+import { UserItemRouters } from "/@router/useritem";
+import { PdsRouters } from "/@router/pds";
 const routes = [
     ...HomeRoutes,
     ...AuthRouters,
@@ -17,6 +19,8 @@ const routes = [
     ...NoticeRouters,
     ...ItemRouters,
     ...CoinRouters,
+    ...UserItemRouters,
+    ...PdsRouters,
 ]
 
 export default routes

@@ -14,6 +14,7 @@
                         <td width="120"><router-link :to="{ name: 'BoardListPage' }">Board</router-link></td>
                         <td width="120"><router-link :to="{ name: 'NoticeListPage' }">Notice Management</router-link></td>
                         <td width="120"><router-link :to="{ name: 'ItemListPage' }">Item Management</router-link></td>
+                        <td width="120"><router-link :to="{ name: 'PdsListPage'}">Open Data Files Management</router-link></td>
                     </template>
                     <template v-else>
                         <td width="120"><router-link :to="{ name: 'Home'} ">Home</router-link></td>
@@ -22,6 +23,8 @@
                         <td width="120"><router-link :to="{ name: 'ItemListPage' }">Item</router-link></td>
                         <td width="120"><router-link :to="{ name: 'CoinChargeRegisterPage' }">Coin Charge</router-link></td>
                         <td width="120"><router-link :to="{ name: 'CoinChargeListPage' }">Coin Info</router-link></td>
+                        <td width="120"><router-link :to="{ name: 'UserItemListPage' }">buy Item</router-link></td>
+                        <td width="120"><router-link :to="{ name: 'CoinPayListPage' }">buy Item Log</router-link></td>
                     </template>
                 </template>
                 <template v-else>

@@ -17,6 +17,7 @@ import { useBoard } from '/@compositions/useBoard'
 import { useNotice } from '/@compositions/useNotice'
 import { useItem } from '/@compositions/useItem'
 import { useCoin } from '/@compositions/useCoin'
+import { useUserItem } from '/@compositions/useUserItem'
 
 export default {
   name: 'App',
@@ -78,7 +79,16 @@ export default {
     const { 
       chargeCoins,
       fetchChargeCoinList,
+      payCoins,
+      fetchPayCoinList,
     } = useCoin()
+
+    const {
+      userItems,
+      userItem,
+      fetchUserItemList,
+      fetchUserItem,
+    } = useUserItem()
 
     provide("myinfo",myinfo)
     provide("isAuthorized",isAuthorized)
@@ -122,6 +132,13 @@ export default {
 
     provide("chargeCoins",chargeCoins)
     provide("fetchChargeCoinList",fetchChargeCoinList)
+    provide("payCoins",payCoins)
+    provide("fetchPayCoinList",fetchPayCoinList)
+
+    provide("userItems",userItems)
+    provide("userItem",userItem)
+    provide("fetchUserItemList",fetchUserItemList)
+    provide("fetchUserItem",fetchUserItem)
 
     onMounted(() => {
       const savedToken = Cookies.get('accessToken')
