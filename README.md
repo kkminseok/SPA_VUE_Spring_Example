@@ -281,3 +281,24 @@
 
 - Json에 대한 내용. java와 연결지어서
 
+## 13. jQuery ajax통신
+
+- Get, GetJson 차이 - 헤더에 json이 달려있냐 안달려있냐 차이
+- $ajax option
+  - url(URL)
+  - type(Post, Get ...)
+  - data
+  - dataType(xml, html, ...)
+  - timeout
+  - global( global 변수 선언)
+  - contentType
+  - headers
+  - success
+  - error
+  - complete(요청 완료시)
+  - beforeSend(요청이 전송되기에 앞서 먼저 호출되는 함수)
+  - async(false이면 요청이 동기로 전송)
+  - processData(false이면 URL인코딩된 형태로 처리되어 전달된 데이터를 금지한다.)
+  - ifModified(Last-Modified 헤더를 확인하며 마지막 요청 이후에 응답 컨텐츠가 변경되지 않았다면 요청이 성공)
+
+## Ch14 Controller Mapping

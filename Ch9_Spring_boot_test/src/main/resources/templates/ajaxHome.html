@@ -113,6 +113,85 @@
             });
         });
 
+        $("#getBtn").on("click", function(){
+            var boardNo = $("#boardNo");
+            var boardVal = boardNo.val();
+
+            console.log(boardVal);
+
+            $.get("/boards/" + boardVal, function(data){
+                console.log(data);
+
+                alert(JSON.stringify(data));
+            })
+        });
+
+        $("#getJsonBtn").on("click",function() {
+            var boardNo = $("#boardNo");
+            var boardVal = boardNo.val();
+
+            console.log(boardVal);
+
+            $.getJSON("/boards/" + boardVal, function(data){
+                console.log(data)
+                alert(JSON.stringify(data));
+            })
+        });
+
+        $("#postBtn").on("click",function(){
+            var title = $("#title");
+            var content = $("#content");
+            var writer = $("#writer");
+
+            var titleVal = title.val();
+            var contentVal = content.val();
+            var writerVal = writer.val();
+
+            var boardObject = {
+                title:titleVal,
+                content: contentVal,
+                writer: writerVal
+            };
+
+            $.post("/boards",boardObject,function(data){
+                console.log(data);
+
+                alert(JSON.stringify(data));
+            })
+        });
+
+        $("#ajaxBtn").on("click",function() {
+            var title = $("#title");
+            var content = $("#content");
+            var writer = $("#writer");
+
+            var titleVal = title.val();
+            var contentVal = content.val();
+            var writerVal = writer.val();
+
+            var boardObject = {
+                title:titleVal,
+                content: contentVal,
+                writer: writerVal
+            };
+
+            $.ajax({
+                type:"POST",
+                url:"/boards",
+                data: JSON.stringify(boardObject),
+                contentType: "application/json; charset=UTF-8",
+                success: function(data) {
+                    console.log("data" + data);
+
+                    alert(data)
+                },
+                error: function(request,status,error){
+                    alert("code : "+ request.status + "\n" + "message: " + request.responseText + "\n" + "error : " + error);
+                }
+            })
+        })
+
+
     });
 </script>
 <body>
@@ -129,6 +208,10 @@
     <button id="registerBtn">Register</button>
     <button id="deleteBtn">Delete</button>
     <button id="modifyBtn">Modify</button>
+    <button id="getBtn">get</button>
+    <button id="getJsonBtn">getJson</button>
+    <button id="postBtn">post</button>
+    <button id="ajaxBtn">ajax</button>
 </div>
 
 </body>

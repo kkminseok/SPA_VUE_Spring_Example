@@ -47,8 +47,12 @@ public class BoardController {
     }
 
     @PostMapping
-    public ResponseEntity<String> register(@RequestBody Board board){
+    public ResponseEntity<String> register( Board board){
         log.info("register");
+
+        log.info("Title : " + board.getTitle());
+        log.info("Content : " + board.getContent());
+        log.info("Writer : " + board.getWriter());
 
         ResponseEntity<String> entity = new ResponseEntity<>("SUCCESS",HttpStatus.OK);
 
