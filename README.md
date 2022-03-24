@@ -245,3 +245,38 @@
 
 ## Ch7 Image Market Application
 
+- vite Alisa(파일 경로를 적어주는 불편함을 덜어줌) 사용
+- router에 props옵션을 사용하여 $router를 사용하는 의존성을 제거함. !!
+
+
+## Ch8 Spring boot init
+
+- 부트 생성 방법. 생략
+
+## Ch9 Spring boot Project inti
+
+- 부트 프로젝트 생성방법. 간단한 컨트롤러 제작 새얅
+
+## Ch10 Lombok
+
+- getter,setter(auto Set, Get)
+- ToString(auto print, 'exclude'를 사용하면 해당 속성은 출력되지 않음.)
+  ```java
+  @ToString(exclude="userName")
+  ```
+- EqualsAndHashCode( Equals로만 하면 동등관계를 제대로 판단해주지 않음. HashCode필요)
+- NoArgsConstructor( 인자 없어도 생성자를 만들어줌. )
+- RequiredArgsConstructor( final로 선언된 필드값을 인자로 받는 생성자 생성)
+- AllArgsConstructor( 객체의 모든 필드값을 인자로 받는 생성자 생성 )
+- Data( RequiredArgs, ToString, Get, Set, EqualsAndHashCode 를 합침)
+- Builder( builder 패턴 사용가능 )
+- Slf4j(log 출력 가능)
+
+## 11. REST
+
+- ajax쓰는법, controller연동
+- Swagger2버전 쓰는법
+
+## 12. JSON
+
+- 

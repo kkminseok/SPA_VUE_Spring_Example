@@ -18,6 +18,7 @@ import { useNotice } from '/@compositions/useNotice'
 import { useItem } from '/@compositions/useItem'
 import { useCoin } from '/@compositions/useCoin'
 import { useUserItem } from '/@compositions/useUserItem'
+import { usePds } from '/@compositions/usePds.js'
 
 export default {
   name: 'App',
@@ -90,6 +91,17 @@ export default {
       fetchUserItem,
     } = useUserItem()
 
+    const {
+      pdsItems,
+      pdsItem,
+      attachments,
+      fetchPdsList,
+      fetchPds,
+      addAttach,
+      resetAttach,
+      removeAttach,
+    } = usePds()
+
     provide("myinfo",myinfo)
     provide("isAuthorized",isAuthorized)
     provide("isAdmin",isAdmin)
@@ -139,6 +151,15 @@ export default {
     provide("userItem",userItem)
     provide("fetchUserItemList",fetchUserItemList)
     provide("fetchUserItem",fetchUserItem)
+
+    provide("pdsItems",pdsItems)
+    provide("pdsItem",pdsItem)
+    provide("attachments",attachments)
+    provide("fetchPdsList",fetchPdsList)
+    provide("fetchPds",fetchPds)
+    provide("addAttach",addAttach)
+    provide("resetAttach",resetAttach)
+    provide("removeAttach",removeAttach)
 
     onMounted(() => {
       const savedToken = Cookies.get('accessToken')

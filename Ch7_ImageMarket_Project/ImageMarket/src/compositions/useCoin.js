@@ -14,7 +14,7 @@ export const useCoin = () => {
         state.chargeCoins = chargeCoins
     }
 
-    const FETCH_PAYCOIN_LIST = (payload) => {
+    const FETCH_PAYCOIN_LIST = (payCoins) => {
         state.payCoins = payCoins
     }
 

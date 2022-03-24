@@ -3,6 +3,7 @@ import Footer from '/@components/common/Footer.vue'
 import MenuBar from '/@components/common/MenuBar.vue'
 import CoinChargeListPage from '/@pages/coin/CoinChargeListPage.vue'
 import CoinChargeRegisterPage from '/@pages/coin/CoinChargeRegisterPage.vue'
+import CoinPayListPage from '/@pages/coin/CoinPayListPage.vue'
 
 export const CoinRouters = [
   {
@@ -24,5 +25,15 @@ export const CoinRouters = [
       default: CoinChargeRegisterPage,
       footer: Footer
     },
-  }
+  },
+  {
+    path: '/coin/pay',
+    name: 'CoinPayListPage',
+    components: {
+      header: MainHeader,
+      menu: MenuBar,
+      default: CoinPayListPage,
+      footer: Footer
+    },
+  },
 ]
