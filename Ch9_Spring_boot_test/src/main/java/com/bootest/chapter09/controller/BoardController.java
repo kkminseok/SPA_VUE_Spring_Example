@@ -15,6 +15,27 @@ import java.util.List;
 @RequestMapping("/boards")
 public class BoardController {
 
+    @RequestMapping("/register")
+    public String registerForm() {
+        log.info("registerForm");
+
+        return "REGISTER";
+    }
+
+    @RequestMapping(path="/modify")
+    public String modifyForm() {
+        log.info("modifyForm");
+
+        return "MODIFY";
+    }
+
+    @RequestMapping("/list")
+    public String reqlist(){
+        log.info("list");
+
+        return "list";
+    }
+
     @GetMapping
     public ResponseEntity<List<Board>> list() {
         log.info("list");
@@ -93,6 +114,13 @@ public class BoardController {
 
         return entity;
 
+    }
+
+    @RequestMapping("/read/{boardNo}")
+    public String read2(@PathVariable int boardNo){
+        log.info("read boardNo : " + boardNo);
+
+        return "Read boardNo : " + boardNo;
     }
 
 }

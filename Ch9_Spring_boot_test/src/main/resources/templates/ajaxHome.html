@@ -191,6 +191,38 @@
             })
         })
 
+        $("#listBtn2").on("click",function(){
+            $.get("/boards/list",function(data){
+                console.log(data);
+
+                alert(JSON.stringify(data));
+            })
+        })
+
+        $("#registerBtn2").on("click",function(){
+            $.get("/boards/register",function(data){
+                console.log(data)
+
+                alert(JSON.stringify(data));
+            })
+        })
+
+        $("#modifyBtn2").on("click", function() {
+            $.get("/boards/modify", function(data) {
+                console.log(data);
+
+                alert(JSON.stringify(data));
+            });
+        });
+
+        $("#readBtn2").on("click",function(){
+            $.get("/boards/read/100",function(data){
+                console.log(data);
+
+                alert(JSON.stringify(data));
+            })
+        })
+
 
     });
 </script>
@@ -212,6 +244,10 @@
     <button id="getJsonBtn">getJson</button>
     <button id="postBtn">post</button>
     <button id="ajaxBtn">ajax</button>
+    <button id="listBtn2">List2</button>
+    <button id="registerBtn2">RegisterBtn2</button>
+    <button id="modifyBtn2">Modify2</button>
+    <button id="readBtn2">/boards/read/100</button>
 </div>
 
 </body>

@@ -1,0 +1,99 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<script src="/js/jQuery-2.1.4.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#registerBtn01").on("click", function() {
+            $.get("/register/hongkd", function(result){
+                console.log("result: " + result);
+
+                alert(result);
+            });
+        });
+
+        $("#registerBtn02").on("click", function() {
+            var userId = $("#userId");
+            var password = $("#password");
+
+            var userIdVal = userId.val();
+            var passwordVal = password.val();
+
+            var userObject = {
+                userId : userIdVal,
+                password : passwordVal
+            };
+
+            $.ajax({
+                type : "POST",
+                url : "/register/hongkd/pw01",
+                data: JSON.stringify(userObject),
+                contentType : "application/json; charset=UTF-8",
+                success : function(result) {
+                    console.log("result: " + result);
+
+                    alert(result);
+                }
+            });
+        });
+
+        $("#registerBtn03").on("click", function() {
+            var userId = $("#userId");
+            var password = $("#password");
+
+            var userIdVal = userId.val();
+            var passwordVal = password.val();
+
+            var userObject = {
+                userId : userIdVal,
+                password : passwordVal
+            };
+
+            $.ajax({
+                type : "POST",
+                url : "/register03",
+                data: JSON.stringify(userObject),
+                contentType : "application/json; charset=UTF-8",
+                success : function(result) {
+                    console.log("result: " + result);
+
+                    alert(result);
+                }
+            });
+        });
+
+        $("#registerBtn04").on("click", function() {
+            $.ajax({
+                type : "POST",
+                url : "/register04?userId=hongkd&password=1234",
+                contentType : "application/json; charset=UTF-8",
+                success : function(result) {
+                    console.log("result: " + result);
+
+                    alert(result);
+                }
+            });
+        });
+
+    });
+</script>
+
+<body>
+<h1>Register Form</h1>
+<form>
+    userId: <input type="text" name="userId" value="hongkd" id="userId"><br>
+    password: <input type="text" name="password" value="1234" id="password"><br>
+</form>
+
+<button id="registerBtn01">registerBtn01</button>
+<button id="registerBtn02">registerBtn02</button>
+<button id="registerBtn03">registerBtn03</button>
+<button id="registerBtn04">registerBtn04</button>
+</body>
+</html>

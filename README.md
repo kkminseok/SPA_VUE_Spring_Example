@@ -302,3 +302,31 @@
   - ifModified(Last-Modified 헤더를 확인하며 마지막 요청 이후에 응답 컨텐츠가 변경되지 않았다면 요청이 성공)
 
 ## Ch14 Controller Mapping
+
+- GET,PUT,PATCH,DELETE,POST Mapping controller에 대해
+
+## Ch15 Conroller response
+
+- 컨트롤러 반환타입에 대한 이야기.
+- void, String, JSON, List, Map, ResponseEntity<>
+
+## Ch16 Controller 요청 처리
+
+- @RequestParam, @PathVariable, @RequestBody
+- LocalDate타입의 경우 yyyyMMdd,yyyy/MM/dd는 변환되지 않음. yyyy-MM-dd는 가능.
+  - @JsonFormat(pattern="yyyyMMdd")로 지정가능.
+
+## Ch17 입력값 검증.
+
+- @Validted, BindingResult(hasErrors(), hasGlobalErros(), hasFieldErrors(), hasFiledErrors(String))객체에 대한 내용.
+- @NotNull, @NotBlank, @Size, @Email, @Past, @Future에 대한 내용
+
+
+
+
+
+
+
+
+
+
